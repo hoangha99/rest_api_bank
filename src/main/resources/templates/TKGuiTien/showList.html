@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Loại</th>
+            <th>Lãi Xuất</th>
+            <th>Số dư</th>
+            <th>Số dư tối thiểu</th>
+            <th>Mã Khách tài khoản khách hàng</th>
+            <th>Mã nhân viên tạo</th>
+
+        </tr>
+        <tr th:each ="taiKhoanGuiTien : ${taiKhoanGuiTien}">
+            <td th:utext="${taiKhoanGuiTien.id}">...</td>
+            <td th:utext="${taiKhoanGuiTien.loai}">...</td>
+            <td th:utext="${taiKhoanGuiTien.laisuat}">...</td>
+            <td th:utext="${taiKhoanGuiTien.sodu}">...</td>
+            <td th:utext="${taiKhoanGuiTien.sodu_toithieu}">...</td>
+            <td th:utext="${taiKhoanGuiTien.kh1.id}">...</td>
+            <td th:utext="${taiKhoanGuiTien.nv1.id}">...</td>
+
+
+            <td><a th:href="@{/tkguitien/update?id={id}(id=${taiKhoanGuiTien.id})}" id="another">Sửa tài khoản</a><br/></td>
+            <td><a th:href="@{/tkguitien/delete?id={id}(id=${taiKhoanGuiTien.id})}" id="another">Xóa tài khoản</a><br/></td>
+        </tr>
+    </table>
+    <table >
+        <tr >
+            <td><a href="/tkguitien/add" id="another">Thêm tài khoản</a><br/></td>
+        </tr>
+
+    </table>
+
+</body>
+</html>

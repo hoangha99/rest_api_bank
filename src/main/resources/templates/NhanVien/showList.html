@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Ten</th>
+            <th>Dia chi</th>
+            <th>SoCMT</th>
+            <th>Ngay Sinh</th>
+            <th>Bac nghe</th>
+            <th>Tham nien</th>
+            <th>Vi tri</th>
+        </tr>
+        <tr th:each ="employees : ${employees}">
+            <td th:utext="${employees.id}">...</td>
+            <td th:utext="${employees.ten}">...</td>
+            <td th:utext="${employees.cmt}">...</td>
+            <td th:utext="${employees.diachi}">...</td>
+            <td th:utext="${employees.ngaysinh}">...</td>
+            <td th:utext="${employees.bacnghe}">...</td>
+            <td th:utext="${employees.thamnien}">...</td>
+            <td th:utext="${employees.vitri}">...</td>
+            <td><a th:href="@{/employee/update?id={id}(id=${employees.id})}" id="another">Sửa nhân viên</a><br/></td>
+            <td><a th:href="@{/employee/delete?id={id}(id=${employees.id})}" id="another">Xóa nhân viên</a><br/></td>
+        </tr>
+    </table>
+    <table >
+        <tr >
+            <td><a href="/employee/add" id="another">Thêm nhân viên</a><br/></td>
+        </tr>
+
+    </table>
+
+</body>
+</html>
