@@ -23,12 +23,14 @@
             <td th:utext="${taiKhoanGuiTien.laisuat}">...</td>
             <td th:utext="${taiKhoanGuiTien.sodu}">...</td>
             <td th:utext="${taiKhoanGuiTien.sodu_toithieu}">...</td>
-            <td th:utext="${taiKhoanGuiTien.kh1.id}">...</td>
-            <td th:utext="${taiKhoanGuiTien.nv1.id}">...</td>
+            <td th:utext="${taiKhoanGuiTien.khachhang_id}">...</td>
+            <td th:utext="${taiKhoanGuiTien.nhanvien_id}">...</td>
 
 
-            <td><a th:href="@{/tkguitien/update?id={id}(id=${taiKhoanGuiTien.id})}" id="another">Sửa tài khoản</a><br/></td>
-            <td><a th:href="@{/tkguitien/delete?id={id}(id=${taiKhoanGuiTien.id})}" id="another">Xóa tài khoản</a><br/></td>
+            <td><a th:href="@{/tkguitien/update?id={id}(id=${taiKhoanGuiTien.id})}" >Sửa tài khoản</a><br/></td>
+            <td><a th:href="@{/tkguitien/delete?id={id}(id=${taiKhoanGuiTien.id})}" >Xóa tài khoản</a><br/></td>
+            <td><a th:href="@{/tkguitien/guitien?id={id}(id=${taiKhoanGuiTien.id})}" >Gửi tiền</a><br/></td>
+            <td><a th:href="@{/tkguitien/thanhtoan?id={id}(id=${taiKhoanGuiTien.id})}" >Thanh toán</a><br/></td>
         </tr>
     </table>
     <table >

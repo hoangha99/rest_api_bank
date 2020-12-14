@@ -1,0 +1,22 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"?>
+    <title>Update tài khoản</title>
+</head>
+<body>
+<h1>Edit Tài khoản gửi tiền:</h1>
+<form th:action="@{/tktindung/doUpdate}" method="POST" th:object="${taiKhoanTinDung}">
+
+    ID  <input th:field="*{id}"/> <br/> <br/>
+
+    Hạn sử dụng: <input th:field="*{hansd}"/> <br/> <br/>
+
+    Số dư: <input th:field="*{sodu}"/> <br/> <br/>
+
+    ID Khách Hàng: <input  th:field="*{khachhang_id}"/> <br/> <br/>
+    ID Nhân Viên tạo: <input  th:field="*{nhanvien_id}"/> <br/> <br/>
+
+    <input type="submit" value="UPDATE" />
+</form>
+</body>
+</html>

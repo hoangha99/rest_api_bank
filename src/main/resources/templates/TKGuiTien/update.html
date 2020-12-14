@@ -7,15 +7,16 @@
 <h1>Edit Tài khoản gửi tiền:</h1>
 <form th:action="@{/tkguitien/doUpdate}" method="POST" th:object="${taiKhoanGuiTien}">
 
-    ID  <input th:field="*{id}"/> <br/> <br/>
+    ID  <span th:utext="${taiKhoanGuiTien.id}"> </span> <br/> <br/>
 
     lãi suất: <input th:field="*{laisuat}"/> <br/> <br/>
 
-    Số dư: <input th:field="*{sodu}"/> <br/> <br/>
+    Số dư: <span th:utext="${taiKhoanGuiTien.sodu}"></span>  <br/> <br/>
+    Loại tài khoản: <span th:utext="${taiKhoanGuiTien.loai}"></span>  <br/> <br/>
 
     Số dư tối thiểu: <input th:field="*{sodu_toithieu}"/> <br/> <br/>
-    ID Khách Hàng: <input  th:field="*{kh1.id}"/> <br/> <br/>
-    ID Nhân Viên tạo: <input  th:field="*{nv1.id}"/> <br/> <br/>
+    ID Khách Hàng: <input  th:field="*{khachhang_id}"/> <br/> <br/>
+    ID Nhân Viên tạo: <input  th:field="*{nhanvien_id}"/> <br/> <br/>
 
     <input type="submit" value="UPDATE" />
 </form>

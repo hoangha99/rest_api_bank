@@ -13,34 +13,28 @@ import java.sql.Date;
 public class KhachHang {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    public Long id;
     @Column(name = "cmt")
     private String cmt;
-    @NotBlank
     @Size(min=3, max = 50)
     @Column(name = "ten")
     private String ten;
-    @NotBlank
     @Column(name = "ngaysinh")
     private Date ngaysinh;
-    @NotBlank
     @Column(name = "diachi")
     private String diachi;
     public KhachHang(){}
 
-    @OneToOne(mappedBy = "kh1", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private TaiKhoanGuiTien taiKhoanGuiTien;
 
-    @OneToOne(mappedBy = "kh2", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private TaiKhoanTinDung taiKhoanTinDung;
-
-    public KhachHang(Long id, String cmt, @NotBlank @Size(min = 3, max = 50) String ten, @NotBlank Date ngaysinh, @NotBlank String diachi, TaiKhoanGuiTien taiKhoanGuiTien, TaiKhoanTinDung taiKhoanTinDung) {
+    public KhachHang(Long id, String cmt, @NotBlank @Size(min = 3, max = 50) String ten, @NotBlank Date ngaysinh, @NotBlank String diachi) {
         this.id = id;
         this.cmt = cmt;
         this.ten = ten;
         this.ngaysinh = ngaysinh;
         this.diachi = diachi;
-        this.taiKhoanGuiTien = taiKhoanGuiTien;
-        this.taiKhoanTinDung = taiKhoanTinDung;
+    }
+
+    public Long getId() {
+        return id;
     }
 }

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Gửi tiền</title>
+</head>
+<body>
+<h1>Gửi tiền vào trong tài khoản</h1>
+<form method="POST" th:action="@{/tkguitien/doThanhToan?id={id}(id=${taiKhoanGuiTien.id})}" th:object="${taiKhoanGuiTien}">
+    <h3>Thông tin tài khoản hiện có</h3>
+    <table cellspacing="5" border="1">
+        <tr>
+            <th>ID</th>
+            <th>Loại</th>
+            <th>lãi xuất</th>
+            <th>Số dư</th>
+
+        </tr>
+        <tr>
+            <td th:utext="${taiKhoanGuiTien.id}">...</td>
+            <td th:utext="${taiKhoanGuiTien.loai}">...</td>
+            <td th:utext="${taiKhoanGuiTien.laisuat}">...</td>
+            <td th:utext="${taiKhoanGuiTien.sodu}">...</td>
+        </tr>
+    </table>
+    <tr>
+        <td align="right"><label >Số Thanh Toán: </label></td>
+        <td align="right"><input type="text" th:value="${sotien}" name="sotien"/></td>
+    </tr>
+    <tr>
+        <td align="right"><label >Số tài khoản (ID) : </label></td>
+        <td align="right"><input type="text" th:value="${idtt}" name="idtt"/></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td><br><input type="submit" value="Gửi tiền"></td>
+    </tr>
+</form>
+
+</body>
+</html>

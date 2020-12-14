@@ -14,37 +14,55 @@ public class TaiKhoanGuiTien {
     private Long id;
 
     @Column
-    private String loai;
+    private String loai = "Tài khoản gửi tiền";
 
     @NotBlank
     @Column(name = "sodu")
-    private Long sodu;
+    private float sodu = 0L;
 
     @NotBlank
     @Column(name = "laisuat")
     private int laisuat;
 
     @Column(name = "sodu_toithieu")
-    private String sodu_toithieu;
+    private float sodu_toithieu = 0L;
 
-    @OneToOne
-    @JoinColumn(name = "khachhang_id")
-    private KhachHang kh1;
+    @NotBlank
+    @Column(name = "khachhang_id")
+    private Long khachhang_id;
 
-    @ManyToOne
-    @JoinColumn(name = "nhanvien_id")
-    private NhanVien nv1;
+    @NotBlank
+    @Column(name = "nhanvien_id")
+    private Long nhanvien_id;
 
-    public TaiKhoanGuiTien(Long id, String loai, @NotBlank Long sodu, @NotBlank int laisuat, String sodu_toithieu, KhachHang kh1, NhanVien nv1) {
-        this.id = id;
-        this.loai = loai;
-        this.sodu = sodu;
-        this.laisuat = laisuat;
-        this.sodu_toithieu = sodu_toithieu;
-        this.kh1 = kh1;
-        this.nv1 = nv1;
+
+    public Long getId() {
+        return id;
+    }
+
+    public Long getKhachhang_id() {
+        return khachhang_id;
+    }
+
+    public Long getNhanvien_id() {
+        return nhanvien_id;
     }
 
     public TaiKhoanGuiTien(){}
 
+    public float getSodu() {
+        return sodu;
+    }
+
+    public void setSodu(float sodu) {
+        this.sodu = sodu;
+    }
+
+    public float getSodu_toithieu() {
+        return sodu_toithieu;
+    }
+
+    public void setSodu_toithieu(float sodu_toithieu) {
+        this.sodu_toithieu = sodu_toithieu;
+    }
 }

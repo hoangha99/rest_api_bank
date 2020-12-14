@@ -16,6 +16,7 @@
             <th>Bac nghe</th>
             <th>Tham nien</th>
             <th>Vi tri</th>
+            <th>Lương</th>
         </tr>
         <tr th:each ="employees : ${employees}">
             <td th:utext="${employees.id}">...</td>
@@ -26,6 +27,7 @@
             <td th:utext="${employees.bacnghe}">...</td>
             <td th:utext="${employees.thamnien}">...</td>
             <td th:utext="${employees.vitri}">...</td>
+            <td th:utext="${employees.luong}">...</td>
             <td><a th:href="@{/employee/update?id={id}(id=${employees.id})}" id="another">Sửa nhân viên</a><br/></td>
             <td><a th:href="@{/employee/delete?id={id}(id=${employees.id})}" id="another">Xóa nhân viên</a><br/></td>
         </tr>

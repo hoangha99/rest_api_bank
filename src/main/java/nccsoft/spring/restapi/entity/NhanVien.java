@@ -17,41 +17,23 @@ public class NhanVien {
     private Long id;
     @Column(name = "cmt")
     private String cmt;
-    @NotBlank
     @Column(name = "ten")
     private String ten;
-
-    @NotBlank
     @Column(name = "ngaysinh")
     private Date ngaysinh;
-
-    @NotBlank
     @Column(name = "diachi")
     private String diachi;
-
-    @NotBlank
     @Column(name = "bacnghe")
     private String bacnghe;
-
     @Column(name = "thamnien")
     private String thamnien;
-
-    @NotBlank
     @Column(name = "vitri")
     private String vitri;
-
     @Column
     private float luong = 0;
 
-    @OneToMany(mappedBy = "nv1", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private List<TaiKhoanGuiTien> taiKhoanGuiTien;
-
-    @OneToMany(mappedBy = "nv2", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private List<TaiKhoanTinDung> taiKhoanTinDung;
-
     public NhanVien(){}
-
-    public NhanVien(Long id, String cmt, @NotBlank String ten, @NotBlank Date ngaysinh, @NotBlank String diachi, @NotBlank String bacnghe, String thamnien, @NotBlank String vitri, float luong, List<TaiKhoanGuiTien> taiKhoanGuiTien, List<TaiKhoanTinDung> taiKhoanTinDung) {
+    public NhanVien(Long id, String cmt, @NotBlank String ten, @NotBlank Date ngaysinh, @NotBlank String diachi, @NotBlank String bacnghe, String thamnien, @NotBlank String vitri, float luong) {
         this.id = id;
         this.cmt = cmt;
         this.ten = ten;
@@ -61,7 +43,17 @@ public class NhanVien {
         this.thamnien = thamnien;
         this.vitri = vitri;
         this.luong = luong;
-        this.taiKhoanGuiTien = taiKhoanGuiTien;
-        this.taiKhoanTinDung = taiKhoanTinDung;
+    }
+
+    public float getLuong() {
+        return luong;
+    }
+
+    public void setLuong(float luong) {
+        this.luong = luong;
+    }
+
+    public Long getId() {
+        return id;
     }
 }

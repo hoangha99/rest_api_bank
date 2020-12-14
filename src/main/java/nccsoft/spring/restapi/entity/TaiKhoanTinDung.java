@@ -4,7 +4,7 @@ import lombok.Data;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
-import java.util.Date;
+import java.sql.Date;
 
 @Entity
 @Data
@@ -15,28 +15,46 @@ public class TaiKhoanTinDung {
     private Long id;
     @Column
     private String loai = "Tài khoản tín dụng";
-    @NotBlank
-    @Column
-    private Long sodu;
 
     @Column
-    private Date hanSD;
+    private float sodu=0;
 
-    @OneToOne
+    @Column
+    private Date hansd;
+
     @JoinColumn(name = "khachhang_id")
-    private KhachHang kh2;
+    private Long khachhang_id;
 
-    @ManyToOne
-    @JoinColumn(name = "nhanvien_id")
-    private NhanVien nv2;
+    @Column(name = "nhanvien_id")
+    private Long nhanvien_id;
 
-    public TaiKhoanTinDung(Long id, String loai, @NotBlank Long sodu, Date hanSD, KhachHang kh2, NhanVien nv2) {
+    public TaiKhoanTinDung(Long id, String loai, float sodu, Date hansd, Long khachhang_id, Long nhanvien_id) {
         this.id = id;
         this.loai = loai;
         this.sodu = sodu;
-        this.hanSD = hanSD;
-        this.kh2 = kh2;
-        this.nv2 = nv2;
+        this.hansd = hansd;
+        this.khachhang_id = khachhang_id;
+        this.nhanvien_id = nhanvien_id;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public Long getKhachhang_id() {
+        return khachhang_id;
+    }
+
+    public Long getNhanvien_id() {
+        return nhanvien_id;
+    }
+
+    public void setSodu(float sodu) {
+        this.sodu = sodu;
+    }
+
+    public float getSodu() {
+        return sodu;
     }
 
     public TaiKhoanTinDung(){}

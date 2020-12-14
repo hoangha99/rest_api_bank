@@ -1,8 +1,6 @@
 package nccsoft.spring.restapi.Service;
 
-import nccsoft.spring.restapi.Repository.KhachHangRepository;
 import nccsoft.spring.restapi.Repository.TKGuiTienRepository;
-import nccsoft.spring.restapi.entity.KhachHang;
 import nccsoft.spring.restapi.entity.TaiKhoanGuiTien;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
