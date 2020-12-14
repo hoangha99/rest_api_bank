@@ -14,7 +14,7 @@ public class TaiKhoanGuiTien {
     private Long id;
 
     @Column
-    private String loai;
+    private String loai = "Tài khoản gửi tiền";
 
     @NotBlank
     @Column(name = "sodu")

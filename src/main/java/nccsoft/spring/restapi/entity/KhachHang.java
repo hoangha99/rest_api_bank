@@ -13,7 +13,7 @@ import java.sql.Date;
 public class KhachHang {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    public Long id;
     @Column(name = "cmt")
     private String cmt;
     @NotBlank
@@ -28,7 +28,7 @@ public class KhachHang {
     private String diachi;
     public KhachHang(){}
 
-    @OneToOne(mappedBy = "kh1", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OneToOne(mappedBy = "kh1",orphanRemoval = true, cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private TaiKhoanGuiTien taiKhoanGuiTien;
 
     @OneToOne(mappedBy = "kh2", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
@@ -42,5 +42,9 @@ public class KhachHang {
         this.diachi = diachi;
         this.taiKhoanGuiTien = taiKhoanGuiTien;
         this.taiKhoanTinDung = taiKhoanTinDung;
+    }
+
+    public Long getId() {
+        return id;
     }
 }

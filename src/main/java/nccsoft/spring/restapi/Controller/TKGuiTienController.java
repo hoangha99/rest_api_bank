@@ -1,16 +1,14 @@
 package nccsoft.spring.restapi.Controller;
 
-import nccsoft.spring.restapi.Service.KhachHangService;
+import nccsoft.spring.restapi.Repository.TKGuiTienRepository;
 import nccsoft.spring.restapi.Service.TKGuiTienService;
-import nccsoft.spring.restapi.entity.KhachHang;
 import nccsoft.spring.restapi.entity.TaiKhoanGuiTien;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
@@ -20,6 +18,8 @@ import java.util.Optional;
 public class TKGuiTienController {
     @Autowired
     TKGuiTienService tkGuiTienService;
+
+
     @GetMapping("/all")
     public String showList(Model model){
         List<TaiKhoanGuiTien> taiKhoanGuiTien = tkGuiTienService.findAll();

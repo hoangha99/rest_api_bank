@@ -4,7 +4,7 @@ import lombok.Data;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
-import java.util.Date;
+import java.sql.Date;
 
 @Entity
 @Data
@@ -15,12 +15,12 @@ public class TaiKhoanTinDung {
     private Long id;
     @Column
     private String loai = "Tài khoản tín dụng";
-    @NotBlank
+
     @Column
     private Long sodu;
 
     @Column
-    private Date hanSD;
+    private Date hansd;
 
     @OneToOne
     @JoinColumn(name = "khachhang_id")
@@ -34,9 +34,17 @@ public class TaiKhoanTinDung {
         this.id = id;
         this.loai = loai;
         this.sodu = sodu;
-        this.hanSD = hanSD;
+        this.hansd = hansd;
         this.kh2 = kh2;
         this.nv2 = nv2;
+    }
+
+    public KhachHang getKh2() {
+        return kh2;
+    }
+
+    public NhanVien getNv2() {
+        return nv2;
     }
 
     public TaiKhoanTinDung(){}

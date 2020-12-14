@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Loại</th>
+            <th>Hạn Sử dụng</th>
+            <th>Số dư</th>
+            <th>Mã Khách tài khoản khách hàng</th>
+            <th>Mã nhân viên tạo</th>
+
+        </tr>
+        <tr th:each ="taiKhoanTinDung : ${taiKhoanTinDung}">
+            <td th:utext="${taiKhoanTinDung.id}">...</td>
+            <td th:utext="${taiKhoanTinDung.loai}">...</td>
+            <td th:utext="${taiKhoanTinDung.hansd}">...</td>
+            <td th:utext="${taiKhoanTinDung.sodu}">...</td>
+            <td th:utext="${taiKhoanTinDung.kh2.id}">...</td>
+            <td th:utext="${taiKhoanTinDung.nv2.id}">...</td>
+
+
+            <td><a th:href="@{/tktindung/update?id={id}(id=${taiKhoanTinDung.id})}" >Sửa tài khoản</a><br/></td>
+            <td><a th:href="@{/tktindung/delete?id={id}(id=${taiKhoanTinDung.id})}" >Xóa tài khoản</a><br/></td>
+        </tr>
+    </table>
+    <table >
+        <tr >
+            <td><a href="/tktindung/add" id="another">Thêm tài khoản</a><br/></td>
+        </tr>
+
+    </table>
+
+</body>
+</html>
