@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Thêm Tài Khoản</title>
+
+</head>
+<body>
+<form method="POST" th:action="@{/tktindung/doAdd}" th:object="${taiKhoanTinDung}">
+    <h1>Thêm Tài khoản!</h1>
+    <h3>Điền thông tin vào theo mẫu ...</h3>
+    <table cellspacing="5" border="0">
+<!--        <tr>-->
+<!--            <td align="right"><label >Loại: </label></td>-->
+<!--            <td align="right"><input type="text" th:field="*{loai}"/></td>-->
+<!--        </tr>-->
+        <tr>
+            <td align="right"><label >Loại: </label></td>
+            <td align="right"><input type="text" th:field="*{loai}"/></td>
+        </tr>
+        <tr>
+            <td align="right"><label >Số dư: </label></td>
+            <td align="right"><input type="text" th:field="*{sodu}"/></td>
+        </tr>
+        <tr>
+            <td align="right"><label >Hạn sử dụng: </label></td>
+            <td align="right"><input type="text" th:field="*{hansd}"/></td>
+        </tr>
+        <tr>
+            <td align="right"><label >ID Nhân viên tạo: </label></td>
+            <td align="right"><input type="text" th:field="*{nv2.id}"/></td>
+        </tr>
+        <tr>
+            <td align="right"><label >ID Khách hàng: </label></td>
+            <td align="right"><input type="text" th:field="*{kh2.id}"/></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><br><input type="submit" value="Thêm tài khoản"></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>
