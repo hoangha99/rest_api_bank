@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Created-By: IntelliJ IDEA
+Built-By: Hoang Ha
+Build-Jdk: 1.8.0_291
+Implementation-Title: restapi
+Implementation-Version: 0.0.1-SNAPSHOT
+Implementation-Vendor-Id: nccsoft.spring
+Main-Class: ${start-class}
+
